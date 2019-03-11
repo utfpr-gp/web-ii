@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var idade = window.prompt("Qual a sua idade?");
+
+        var mostrar = confirm("Deseja mostrar sua idade?");
+        if (mostrar && isFinite(idade)) {
+            alert("Idade " + idade);
+        }
+
+        if (isNaN(idade)) {
+            alert('É palavra');
+        }
+
+    </script>
+</body>
+
+</html>

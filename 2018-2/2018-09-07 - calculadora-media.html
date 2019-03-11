@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        Nota 1:
+        <input type="text" id="input-nota-1"> Nota 2:
+        <input type="text" id="input-nota-2"> Aulas:
+        <input type="text" id="input-aulas"> Frequencia:
+        <input type="text" class="input-freq">
+        <button id="button-enviar" onclick="calculaNota()" type="button">Enviar</button>
+    </form>
+    <script>
+        function calculaMedia(nota1, nota2) {
+            var media = (nota1 + nota2) / 2;
+            return media;
+        }
+
+        function calcularPerFreq(aulas, freq) {
+            return freq / aulas * 100;
+        }
+
+        function ehAprovado(media, percFreq) {
+            var resultado = (media >= 6 && percFreq >= 75) ? "aprovado" : "reprovado";
+            alert(resultado + " " + media + " " + percFreq);
+        }
+
+        function calculaNota() {
+            var nota1 = +document.getElementById("input-nota-1").value;
+            var nota2 = +document.getElementById("input-nota-2").value;
+            var aulas = +document.querySelector("#input-aulas").value;
+            var freq = +document.querySelector(".input-freq").value;
+
+            var media = calculaMedia(nota1, nota2);
+            var percFreq = calcularPerFreq(aulas, freq);
+            ehAprovado(media, percFreq);
+
+        }
+    </script>
+</body>
+</html>

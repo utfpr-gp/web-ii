@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+</head>
+
+<body>
+    <h1>Calculadora</h1>
+    <h3>Resultado:</h3><span id="resultado"></span>
+
+    <script>
+        var calculadora = function(a, b, operator) {
+            switch (operator) {
+                case "+":
+                    return a + b;
+                case "-":
+                    return a - b;
+                case "*":
+                    return a * b;
+                case "/":
+                    return a / b;
+                default:
+                    alert("Operador inválido!");
+            }
+        }
+
+        var resultado = calculadora(2, 4, "/");
+        document.querySelector("#resultado").textContent = resultado;
+    </script>
+</body>
+
+</html>

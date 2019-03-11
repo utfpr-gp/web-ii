@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        do {
+            do {
+                var mes = prompt("Digite um numero de 1 a 12");
+            } while (isNaN(mes));
+
+            mes = parseInt(mes);
+            var again = false;
+            switch (mes) {
+                case 1:
+                    document.write("Janeiro");
+                    break;
+                case 2:
+                    alert("Fevereiro");
+                    break;
+                case 3:
+                    window.alert("Março");
+                    break;
+                case 4:
+                    alert("Abril");
+                    break;
+                default:
+                    again = true;
+                    alert("Não é um mês válido!");
+
+            }
+        } while (again)
+    </script>
+</body>
+
+</html>

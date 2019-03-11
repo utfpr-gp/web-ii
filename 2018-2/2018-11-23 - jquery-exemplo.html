@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #div-resultado{
+            display: none;
+        }
+        
+        .div-background{
+            background-color: blue;
+            color: white;
+            height: 100px                
+        }
+    </style>
+</head>
+
+<body>
+   <h1>Exemplo com jQuery</h1>
+   <label for="input-name">Insira um nome:</label>
+   <input id="input-name" type="text">
+   <button type="button">Imprime</button>
+   <button type="button">Não Imprime</button>
+   <div id="div-resultado"></div>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+        $(function(){
+            //alert("Olá Mundo!");
+            $('#input-name').val("Roni Fabio").css('color', 'red');
+            $('button').on('click', function(){
+                let name = $('#input-name').val();
+                
+                //$('#div-resultado').css('display', 'block').html('<strong>' + name + '</strong>')
+                //$('#div-resultado').show().html('<strong>' + name + '</strong>')
+                //$('#div-resultado').fadeIn(5000).html('<strong>' + name + '</strong>').delay(3000).fadeOut(5000);
+                $('#div-resultado').addClass('div-background');
+                $('#div-resultado').slideDown(5000).html('<strong>' + name + '</strong>').delay(3000).slideUp(5000);
+                
+            })
+            $('button').click(function(){
+                $(this).text('Impresso');
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        Nome:
+        <input type="text" id="nome-input">
+        <button id="nome-button" type="button" onclick="imprimeNome()">Diga olá!</button>
+    </form>
+    <div id="container-div"></div>
+    <script>
+        function imprimeNome() {
+            var e = document.getElementById("nome-input");
+            var nome = e.value;
+            console.log(e);
+            var frase = "Seja bem-vindo " + nome + "!"
+            window.alert(frase);
+            document.getElementById("container-div").innerHTML = "<strong>" + frase + "</strong>";
+
+        }
+    </script>
+</body>
+
+</html>

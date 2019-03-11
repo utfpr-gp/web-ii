@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="relogio-id">
+    <script>
+        //declarando a função
+        function relogio() {
+            //pega a hora atual
+            var now = new Date();
+            var hour = (now.getHours() < 10) ? "0" + now.getHours() : now.getHours();
+            var minute = now.getMinutes();
+            minute = (minute < 10) ? "0" + minute : minute;
+            var second = now.getSeconds();
+            second = (second < 10) ? "0" + second : second;
+            //formata a hora 
+            var time = hour + ":" + minute + ":" + second;
+            //apresenta a hora no input
+            document.getElementById("relogio-id").value = time;
+        }
+        //invocando
+        window.setInterval(relogio, 1000);
+    </script>
+</body>
+</html>

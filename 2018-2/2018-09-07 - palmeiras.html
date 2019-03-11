@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var resposta = confirm("O Palmeiras tem mundial?");
+        if (resposta) {
+            var ano = window.prompt("Em que ano?");
+            if (isFinite(ano)) {
+                alert("É Mentira!!!!");    
+            }
+            else{
+                alert("Digite um ano válido!");    
+            }            
+        } else {
+            alert("Isso aí! O Palmeiras não tem mundial!");
+        }
+
+    </script>
+</body>
+
+</html>

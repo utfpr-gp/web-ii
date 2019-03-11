@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="ling"></div>
+
+    <script>
+        var linguagens = ["Java", "JavaScript", "Ruby", "PHP", "COBOL", "Delphi", "Pascal"];
+
+        linguagens.reverse().sort(function() {
+            return (Math.random() > 0.5) ? -1 : 1;
+        });
+
+        ling.innerHTML = linguagens.join("<br>");
+
+    </script>
+</body>
+
+</html>

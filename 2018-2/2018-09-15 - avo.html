@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var avo = {
+            nome: "José",
+            sobrenome: "Sá",
+            cidade: "Curitiba",
+            imprime: function() {
+                console.log(this.nome + " " + this.sobrenome + " " + this.cidade);
+            }
+        }
+
+        var mae = Object.create(avo);
+        mae.nome = "Joana";
+        mae.sobrenome = "Pato";
+
+        var filho = {}
+        Object.setPrototypeOf(filho, mae);
+        filho.nome = "João";
+        filho.cidade = "Maceió";
+
+        avo.imprime();
+        mae.imprime();
+        filho.imprime();
+    </script>
+</body>
+</html>

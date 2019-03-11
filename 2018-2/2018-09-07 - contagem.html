@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1></h1>
+    <script>
+        document.querySelector("h1").textContent = 10;
+
+        function f() {
+            var counter = document.querySelector("h1").textContent;
+            counter--;
+            document.querySelector("h1").textContent = counter;
+
+            if (counter <= 0) {
+                clearInterval(chave);
+            }
+        }
+
+        chave = setInterval(f, 1000);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        document.body.style.backgroundColor = "#000";
+        var counter = 0;
+
+        function fundo() {
+            counter += 5;
+            var newColor = "rgb(0, 0, " + counter + ")";
+            document.querySelector("body").style.backgroundColor = newColor;
+
+            if (counter == 255) {
+                clearInterval(chave);
+            }
+        }
+
+        var chave = setInterval(fundo, 1000);
+    </script>
+
+</body>
+
+</html>

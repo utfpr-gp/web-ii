@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var forma = {
+            tipo: null,
+            getTipo: function() {
+                return this.tipo;
+            }
+        }
+
+        //objeto existente
+        var tri = {
+            a: 3,
+            b: 4,
+            c: 5,
+            getPerimetro: function() {
+                return this.a + this.b + this.c;
+            }
+        }
+        Object.setPrototypeOf(tri, forma);
+
+        //objeto novo
+        var triangulo = Object.create(forma);
+        triangulo.a = 3;
+        triangulo.b = 5;
+        triangulo.c = 4;
+        triangulo.getPerimetro = function() {
+            return this.a + this.b + this.c;
+        }
+        triangulo.__proto__.numeroLados = 3;
+
+        var Triangulo = function(a, b, c) {
+            this.a = a;
+            this.b = b;
+            this.c = c;
+            this.getPerimetro = function() {
+                return this.a + this.b + this.c;
+            }
+        }
+        var equilatero = new Triangulo(5, 5, 5);
+        console.log(forma);
+        console.log(triangulo);
+        console.log(triangulo.getPerimetro());
+    </script>
+</body>
+
+</html>

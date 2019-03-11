@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+</head>
+
+<body>
+    <h1>Calculadora</h1>
+    <h3>Resultado:</h3><span id="resultado" class="resultado"></span>
+
+    <script>
+        function sum(a, b) {
+            return a + b;
+        }
+
+        function sub(a, b) {
+            return a - b;
+        }
+
+        function mult(a, b) {
+            return a * b;
+        }
+
+        var calculadora = function(a, b, f) {            
+            return f(a, b);
+        }
+        var div = function(a, b) {
+            return a / b;
+        }
+        var resultado = calculadora(2, 0, div);
+        
+        document.querySelector(".resultado").textContent = resultado;
+    </script>
+</body>
+
+</html>

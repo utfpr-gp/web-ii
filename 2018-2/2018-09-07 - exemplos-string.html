@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var nome = prompt("Digite o seu nome");
+        var saudacao = "Seja bem-vindo " + nome + "!!!";
+        var saudacaoEs6 = `Seja bem-vindo ${nome} !!!`;
+
+        console.log(saudacao);
+        console.log(saudacaoEs6);
+        var contador = 0;
+        nome = nome.toLowerCase();
+
+        var vogais = 'aeiouáéíóúàãê';
+        for (i in nome) {
+            if (vogais.indexOf(nome.charAt(i)) != -1) {
+                contador++;
+            }
+        }
+        alert(`Contador: ${contador}`);
+
+        var n = 255;
+        console.log(`Base Hexa: ${n.toString(16)}`);
+        console.log(`Base Binária: ${n.toString(2)}`);
+
+    </script>
+</body>
+
+</html>

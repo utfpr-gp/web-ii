@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //é uma classe
+        var Jogador = function(nome, time, gols) {
+            this.nome = nome;
+            this.timeFutebol = time;
+            this.gols = gols;
+            this.imprime = function(){
+                console.log(this.nome + " " + this.gols);
+            }
+        }
+
+        //objeto
+        var cassio = new Jogador("Cássio", "Corinthians", 0);
+        var henrique = new Jogador("Henrique", "Corinthians", 2);
+        
+        var diego = {}
+        diego.nome = "Diego";
+        diego.titulos = 2;
+        diego.jogaCom = null;
+        
+        var borja = {
+            nome: "Borja",
+            gols: 18,
+            "time-futebol": "Palmeiras",
+            imprime: function(){
+                console.log(this.nome + " " + this.gols);
+            }
+        }
+        
+        diego.jogaCom = borja;
+        
+        console.log(cassio);
+        console.log(diego);
+        console.log(borja);
+        console.log("Time do Borja: " + borja["time-futebol"]);
+        console.log("Títulos do Diego: " + diego.titulos);
+        cassio.imprime();
+
+    </script>
+</body>
+
+</html>

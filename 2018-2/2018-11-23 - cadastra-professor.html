@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="input-name">Nome do Professor</label>
+        <input type="text" id="input-name">
+        <p>
+            <label for="input-subject">Disciplina</label>
+            <input type="text" id="input-subject">
+            <button type="button">Adicionar</button>
+        </p>
+        <button>Salvar Professor</button>
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        let professor = newProfessor();
+
+        function newProfessor() {
+            function Professor() {
+                this.name = name;
+                this.subjects = [];
+                this.addSubject = function(subject) {
+                    this.subjects.push(subject);
+                }
+            }
+            let p = new Professor();
+            return p;
+        }
+
+        $('#input-subject +button').click(function() {
+            if ($('#input-subject').val()) {
+                professor.addSubject($('#input-subject').val());
+            }
+        });
+        $('form').submit(function(e) {
+            e.preventDefault();
+            professor.name = $("#input-name").val();
+            let professors = null;
+            if (localStorage.professors) {
+                professors = JSON.parse(localStorage.getItem('professors'));
+            } else {
+                professors = [];
+                localStorage.setItem('professors', professors);
+            }
+            //adiciona o professor no vetor
+            professors.push(professor);
+
+            localStorage.setItem('professors', JSON.stringify(professors));
+            professor = newProfessor();
+            alert("Submetido!");
+        });
+    </script>
+</body>
+
+</html>
