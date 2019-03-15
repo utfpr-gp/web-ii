@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Seja bem-vindo a WEB IV</h1>
+    <button type="button" id="button-clique">Clique Aqui!</button>
+
+    <script>
+        var counter = 0;
+
+        function clickHandler() {
+            counter++;
+            alert("Seja bem-vindo pela " + counter + " vez..");
+            //document.write("Seja bem-vindo!!!");
+            console.log("Seja bem-vindo!!!");
+        }
+
+        document.getElementById("button-clique").onclick = clickHandler;
+    </script>
+</body>
+
+</html>
