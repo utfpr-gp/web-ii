@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let peso = prompt('Peso');
+        let altura = prompt('Altura');
+
+        if (isFinite(peso) && isFinite(altura)) {
+            peso = +peso;
+            altura = +altura;
+
+            let imc = peso / (altura * altura);
+            if (confirm('Você deseja apresentar o IMC?')) {
+                alert('IMC: ' + imc);
+            }
+        } else {
+            alert("Por favor, insira números");
+        }
+    </script>
+</body>
+
+</html>

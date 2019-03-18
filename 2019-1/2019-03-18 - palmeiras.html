@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Palmeiras não tem mundial!!!</h1>
+    <script>
+        let result = window.confirm('O Palmeiras tem mundial??');
+        if (result) {
+            let year = window.prompt('Ahh tá, em qual ano?');
+            if (isNaN(year)) {
+                alert('Digite um ano válido, por favor!');
+            }
+            alert('É mentira');
+        } else {
+            alert("Realmente, o Palmeiras não tem mundial!!");
+        }
+    </script>
+</body>
+
+</html>
