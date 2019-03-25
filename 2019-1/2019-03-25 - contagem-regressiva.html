@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Contagem Regressiva</h1>
+    <h2 id="h2-contador"></h2>
+
+    <script>
+        let counter = 10;
+        document.querySelector('#h2-contador').textContent = counter;
+
+        let key = window.setInterval(decrementValue, 1000);
+
+        function decrementValue() {
+            counter--;
+            document.querySelector('#h2-contador').textContent = counter;
+
+            if (counter == 0) {
+                clearInterval(key);
+            }
+        }
+    </script>
+</body>
+
+</html>

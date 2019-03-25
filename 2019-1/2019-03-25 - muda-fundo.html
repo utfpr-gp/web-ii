@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="h1-color"></h1>
+    <script>
+        let color = 0;
+        document.querySelector('body').style.backgroundColor = 'rgb(0, 0, 0)';
+        document.querySelector('body').style.color = "white";
+
+        let key = setInterval(updateColor, 1000);
+
+        function updateColor() {
+            color += 5;
+            document.querySelector('body').style.backgroundColor = `rgb(0, 0, ${color})`;
+            document.querySelector('#h1-color').textContent = color;
+            if (color == 255) {
+                clearInterval(key);
+            }
+        }
+    </script>
+</body>
+
+</html>
