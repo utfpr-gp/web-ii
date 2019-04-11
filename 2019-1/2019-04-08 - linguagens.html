@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Linguagens de Programação</h1>
+    <div id="linguagem"></div>
+    <script>
+        let languages = ['Java', 'JavaScript', 'Delphi', 'PHP', 'Ruby',
+            'Pascal', 'C', 'C#', 'VB', 'Python'
+        ];
+
+        languages = languages.reverse();
+
+        for (e of languages) {
+            console.log(e);
+        }
+
+        languages = languages.sort();
+
+        for (i in languages) {
+            console.log(languages[i]);
+        }
+
+        console.log(typeof (languages));
+
+        let languageString = languages.join('<br>');
+
+        linguagem.innerHTML = languageString;
+    </script>
+</body>
+
+</html>

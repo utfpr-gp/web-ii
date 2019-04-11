@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Calculadora</h1>
+    <script>
+        let calculadora = function (a, b, simbolo = '+') {
+            let x = null;
+            switch (simbolo) {
+                case '+':
+                    return a + b;
+                case '*':
+                    return a * b;
+                case '/':
+                    return a / b;
+                case '-':
+                    return a - b;
+                default:
+                    return NaN;
+            }
+        }
+
+        document.write(calculadora(3, 5));
+    </script>
+
+
+</body>
+
+</html>
