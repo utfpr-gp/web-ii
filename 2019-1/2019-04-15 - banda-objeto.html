@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Banda</h1>
+
+    <script>
+        const Banda = function (nome, quantidadeShows, membros) {
+            this.nome = nome;
+            this.quantidadeShows = quantidadeShows;
+            this.integrantes = membros;
+        }
+
+        const Cantor = function (nome, banda, cache) {
+            this.nome = nome;
+            this.banda = banda;
+            this.cacheShow = cache;
+            this.mostraDados = function () {
+                alert("Nome " + this.nome + " Banda " + this.banda.nome);
+            }
+        }
+        Cantor.prototype.pais = "Brasil";
+        let nirvana = new Banda("Neyvana", 6, ["João", "José", "Júlio"]);
+        let joao = new Cantor("João", nirvana, 200.000);
+        joao.mostraDados();
+
+        joao.__proto__.cidade = "São Paulo";
+        console.log(joao);
+    </script>
+</body>
+
+</html>

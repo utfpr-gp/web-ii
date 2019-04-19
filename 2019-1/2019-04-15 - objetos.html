@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Objetos</h1>
+    <script>
+        let Pessoa = function (nome, email) {
+            this.nome = nome;
+            this.email = email;
+            this.imprime = function () {
+                console.log(`Nome ${this.nome} e Email ${this.email}`);
+            }
+        }
+
+        let oilson = new Pessoa('Oilson', 'oilson@gmail.com');
+        oilson.cidade = 'Guarapuava';
+
+        let gean = new Pessoa('Gean', 'gean@gmail.com');
+
+        console.log(oilson);
+        console.log(gean);
+
+        console.log(`Nome ${oilson.nome}`);
+        oilson.imprime();
+        console.log(`Cidade do Oilson ${oilson.cidade}`);
+
+        let antonio = {
+            nome: 'Antonio',
+            email: 'antonio@gmail.com',
+            imprime: function () {
+                console.log("Nome " + this.nome);
+            }
+        };
+        antonio.cidade = 'Guarapuava';
+
+        antonio.imprime();
+    </script>
+</body>
+
+</html>
