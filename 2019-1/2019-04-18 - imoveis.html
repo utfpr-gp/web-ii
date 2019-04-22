@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Imóveis</h1>
+
+    <div></div>
+    <div id="div-new"></div>
+    <div id="div-old"></div>
+
+    <script>
+        class RealEstate {
+            constructor(address, price) {
+                this.address = address;
+                this._price = price;
+            }
+
+            print() {
+                document.querySelector('div').innerHTML = `${this.address} com preço ${this.price}`;
+            }
+
+            get price() {
+                return this._price;
+            }
+
+            set price(price) {
+                this._price = price;
+            }
+        }
+
+        class NewRealEstate extends RealEstate {
+            constructor(address, price, city = 'Guarapuava') {
+                super(address, price);
+                this.city = city;
+            }
+
+            print() {
+                document.querySelector('#div-new').innerHTML = `${this.address} com preço ${this.price * 1.2}`;
+            }
+        }
+
+        class OldRealEstate extends RealEstate {
+
+            print() {
+                document.querySelector('#div-old').innerHTML = `${this.address} com preço ${this.price * 0.8}`;
+            }
+        }
+
+        let newRealEstate = new NewRealEstate('Rua XV', 100000);
+        let oldRealEstate = new OldRealEstate('Rua 15', 100000);
+
+        alert("Valor original " + newRealEstate.__proto__.price);
+
+        console.log(newRealEstate);
+
+        newRealEstate.print();
+        oldRealEstate.print();
+    </script>
+</body>
+
+</html>
