@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form onsubmit="return validaFormulario()">
+        <p>
+            Professor: <input type="text">
+        </p>
+        <p>
+            Disciplina: <input type="text">
+        </p>
+        <select id="dias">
+            <option value="1">Segunda-feira</option>
+            <option value="2">Terça-Feira</option>
+            <option value="3">Quarta-feira</option>
+        </select>
+        <br>
+        O que vc quer aprender?
+        <input type="radio" name="ling" value="JS"> JS
+        <input type="radio" name="ling" value="CSS">CSS
+        <input type="radio" name="ling" value="HTML">HTML
+        <br>
+
+        <button type="submit">Enviar</button>
+    </form>
+    <script>
+        function validaFormulario() {
+
+            let linguages = document.getElementsByName('ling');
+            for (i in linguages) {
+                if (linguages[i].checked) {
+                    alert(linguages[i].value);
+                }
+            }
+
+            // let professor = window.document.forms[0].elements[0];
+            // professor = professor.value;
+
+            // let dia = document.getElementById('dias').value;
+            // let select = document.getElementById('dias');
+            // alert(`Dia selecionado ${dia} - ${select.options[select.selectedIndex].text}`);
+
+            // if (professor == undefined || professor == "") {
+            //     return false;
+            // }
+
+            console.log(professor);
+            return true;
+        }
+    </script>
+</body>
+
+</html>

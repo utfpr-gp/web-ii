@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="button-click" type="button">Clique Aqui</button>
+
+    <script>
+        let Fuel = function (type, price) {
+            this.type = type;
+            this.price = price;
+        }
+
+        function mouseOverHandler() {
+            console.log(this);
+            this.textContent = "Sai de cima!";
+        }
+        document.querySelector('#button-click').onclick = function () {
+            this.textContent = "Clicado!";
+        }
+
+        document.querySelector('#button-click').onmouseover = mouseOverHandler;
+
+        window.mouseOverHandler();
+
+        let gasolina = Fuel('Gasolina', 4.00);
+        //console.log(gasolina.type);
+        console.log(window);
+    </script>
+</body>
+
+</html>

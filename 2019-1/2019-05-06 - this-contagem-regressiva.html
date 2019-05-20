@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Contagem Regressiva</h1>
+    <script>
+        let Counting = function (value) {
+            this.value = value;
+            this.decrement = function () {
+                let that = this;
+                window.setInterval(() => {
+                    this.show();
+                    this.value--;
+                }, 1000);
+            }
+            this.show = function () {
+                console.log(`Valor é ${this.value}`);
+            }
+        }
+        let c = new Counting(10);
+        c.decrement();
+    </script>
+</body>
+
+</html>
