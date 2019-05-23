@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        input:invalid {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <p>
+            Nome: <input type="text" maxlength="10" autofocus required>
+        </p>
+        <p>
+            Idade: <input type="number" min="0" max="20" required>
+        </p>
+        <button>Enviar</button>
+    </form>
+
+    <script>
+        document.forms[0].elements[0].addEventListener('invalid', function () {
+            this.setCustomValidity(this.validity.tooLong ? 'O nome precisa ter no máximo 10 caracteres' : '');
+            this.setCustomValidity(this.validity.valueMissing ? 'O campo nome é obrigatório' : '');
+        });
+
+        document.forms[0].elements[1].addEventListener('invalid', function () {
+            this.setCustomValidity(this.validity.rangeOverflow || this.validity.rangeUnderflow ?
+                'A idade precisa estar entre 0 e 20' : '');
+        });
+
+        document.forms[0].onsubmit =
+            function (e) {
+                e.preventDefault();
+                alert('Cadastrado com sucesso -> ' + `
+                ${document.forms[0].elements[0].value}:${document.forms[0].elements[1].value}`);
+            }
+    </script>
+</body>
+
+</html>

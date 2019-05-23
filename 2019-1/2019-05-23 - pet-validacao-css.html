@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        input:not(:placeholder-shown):invalid {
+            border: 1px solid red;
+        }
+
+        input:required:valid,
+        input:valid {
+            border: 1px solid blue;
+        }
+
+        input:required:valid+span,
+        input:valid+span {
+            display: none;
+        }
+
+        input:placeholder-shown+span {
+            display: none;
+        }
+
+        input:not(:placeholder-shown):invalid+span {
+            display: block;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <p>
+            Nome: <input type="text" placeholder="Nome do Pet" maxlength="10" autofocus required>
+            <span>Por favor, insira um nome de até 10 caracteres.</span>
+        </p>
+        <p>
+            Idade: <input type="number" placeholder="Idade do Pet" min="0" max="20" required>
+            <span>Por favor, insira uma idade de 0 a 20.</span>
+        </p>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        document.forms[0].onsubmit =
+            function (e) {
+                e.preventDefault();
+                alert('Cadastrado com sucesso -> ' + `
+                ${document.forms[0].elements[0].value}:${document.forms[0].elements[1].value}`);
+            }
+
+        //impede a apresentação dos balões de erros
+        document.addEventListener('invalid', function (e) {
+            e.preventDefault();
+        }, true);
+    </script>
+</body>
+
+</html>
