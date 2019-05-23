@@ -1,40 +1,62 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <title>Validação HTML5</title>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <title>Document</title>
+
     <style>
-        input:invalid {
+        input:not(:placeholder-shown):invalid {
             border: 1px solid red;
+            background-image: url(invalid.png);
+            background-position: right top;
+            background-repeat: no-repeat;
         }
 
+        input:required:valid,
         input:valid {
-            border: 1px solid green;
+            border: 1px solid blue;
+            background-image: url(valid.png);
+            background-position: right top;
+            background-repeat: no-repeat;
+        }
+
+        input:valid+span {
+            display: none;
+            color: black;
+        }
+
+        input:not(:placeholder-shown):invalid+span {
+            display: block;
+            color: red;
         }
     </style>
 </head>
 
 <body>
-    <form onsubmit="alert('Enviado com sucesso!')">
+    <form action="" onsubmit="alert('Passou!')">
         <label for="fruit">Você prefere banana ou maça?</label>
         <p>
-            Fruta(Banana ou Maça): <input name="fruit" pattern="[Bb]anana|[Mm]aça" required>
-            Quantidade <input name="amount" type="number" min="0" max="10" required>
-            Email: <input type="email" required>
+            Fruta: <input name="fruit" pattern="[Bb]anana|[Mm]aça" placeholder="Banana ou Maça" autofocus>
+            <span>Por favor, insira um nome válido!</span>
+        </p>
+
+        <p>
+            Quantidade <input name="quantidade" type="number" min="1" max="10" placeholder="0">
+            <span>Por favor, insira uma quantidade de 1 a 10!</span>
+        </p>
+        <p>
+            Email: <input type="email" placeholder="email@email.com">
+            <span>Por favor, insira um email válido!</span>
         </p>
         <button type="submit">Submit</button>
     </form>
-    <script>
-        var form = document.forms[0];
-        var fruitInput = form.fruit;
-        var amountInput = form.amount;
-        var emailInput = form.elements[2];
 
-        emailInput.addEventListener('invalid', () => {
-            this.setCustomValidity(this.validity.typeMismatch ?
-                'Um email válido, querido!' : '');
-        });
+    <script>
+        //impede a apresentação dos balões de erros
+        document.addEventListener('invalid', function (e) {
+            e.preventDefault();
+        }, true);
     </script>
 </body>
 
