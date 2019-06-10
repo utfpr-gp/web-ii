@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Web Storage</h1>
+    Contador: <span id="counter-panel"></span>
+    <script>
+        var $id = function (id) {
+            return document.getElementById(id);
+        }
+
+        var c = sessionStorage.counter;
+        if (c == null) {
+            sessionStorage.setItem("counter", 0);
+        }
+
+        sessionStorage.counter = +sessionStorage.counter + 1;
+
+        $id('counter-panel').innerHTML = sessionStorage["counter"];
+
+        let utfpr = {
+            name: 'UTFPR',
+            campus: 'Guarapuava'
+        }
+
+        localStorage.university = JSON.stringify(utfpr);
+
+        let u = JSON.parse(localStorage.getItem('university'));
+        alert(`Bem-vindo à ${u.name}`);
+
+        //persiste em vetor
+        let unicentro = {
+            name: 'Unicentro',
+            campus: 'Guarapuava'
+        };
+
+        let universities = [utfpr, unicentro];
+        localStorage.universities = JSON.stringify(universities);
+    </script>
+    <script>
+        document.cookie = 'nome=João';
+        document.cookie = 'cidade=Guarapuava';
+
+        //alert(document.cookie);
+    </script>
+</body>
+
+</html>

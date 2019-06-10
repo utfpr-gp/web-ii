@@ -1,8 +1,6 @@
 (function () {
     let x;
 
-
-
     let sum = function (x = 1, y = 3) {
         return x + y;
     }
@@ -43,6 +41,8 @@
     }
 
     garfield.print();
+
+    var l;
 
     class University {
         constructor(name, city) {
