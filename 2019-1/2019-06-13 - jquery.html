@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .quadrado {
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="div-id" class="uma-classe"></div>
+    <ul id="ul-id" class="uma-classe"></ul>
+
+    <button id="button-id">Clique Aqui</button>
+    <div class="quadrado"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      $("#div-id").html("Alô jQuery!!!!");
+
+      //alert(divContent);
+
+      $(function() {
+        let divContent = $("#div-id").html();
+        divContent += " 2019";
+        $("#div-id").text(divContent);
+
+        //ul
+        let ulContent = $("#ul-id").html();
+        ulContent += `<li>Palmeiras</li>`;
+        ulContent += `<li>Corinthians</li>`;
+        ulContent += `<li>São Paulo</li>`;
+        ulContent += `<li>Santos</li>`;
+        $("#ul-id").html(ulContent);
+
+        //muda a cor
+        $("body").css("color", "blue");
+
+        $(".uma-classe").click(function() {
+          $(this).hide();
+        });
+
+        $("#button-id").click(function() {
+          $(".quadrado").slideToggle(5000);
+        });
+      });
+    </script>
+  </body>
+</html>
