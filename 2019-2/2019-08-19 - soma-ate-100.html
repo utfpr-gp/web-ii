@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <h1>Teste fail</h1>
+    <h2>teste Fail 2</h2>
+    Resultado: <span id="resultado-span"></span>
+
+    <script>
+      //let x = document.querySelector("body");
+      var total = null;
+      alert(typeof total);
+      for (let i = 0; i <= 100; i++) {
+        total += i;
+        //console.log(i);
+      }
+      //x.innerHTML += "<h2>" + total + "</h2>";
+      //console.log(i);
+      document.getElementById(
+        "resultado-span"
+      ).innerHTML = `<strong>O total é ${total}</strong>`;
+    </script>
+  </body>
+</html>

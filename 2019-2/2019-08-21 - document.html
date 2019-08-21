@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <ul id="numeros-ul">
+
+    </ul>
+
+    <script>
+        window.document.bgColor = "blue";
+        document.fgColor = "white";
+        document.title = 'Mudando o título'
+        document.write(`A página foi modificada em ${document.lastModified}`);
+        let s = "";
+        for (let i = 0; i < 10; i++) {
+            s += `<li>Número ${i}</li>`
+        }
+        document.getElementById("numeros-ul").innerHTML = s;
+    </script>
+</body>
+
+</html>
