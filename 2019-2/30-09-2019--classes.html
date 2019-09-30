@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Classes</h1>
+    <script>
+        class Pet {
+            constructor(name, age) {
+                this.name = name;
+                this._age = age;
+            }
+
+            get age() {
+                return this._age;
+            }
+
+            set age(age) {
+                this._age = age;
+            }
+
+            imprime() {
+                console.log(`Nome: ${this.name} e idade ${this.age}`);
+            }
+        }
+
+        let bilu = new Pet("Bilu", 4);
+        bilu.imprime();
+    </script>
+</body>
+
+</html>

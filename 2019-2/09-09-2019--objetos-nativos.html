@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let nomes = ['1 - Samuel', '4 - Beatriz', '10 - Mateus', '3 - Guilherme'];
+
+        nomes = nomes.sort(fnComparacao);
+
+        function fnComparacao(a, b) {
+            return parseInt(a) - parseInt(b);
+        };
+
+        console.log(nomes);
+    </script>
+</body>
+
+</html>

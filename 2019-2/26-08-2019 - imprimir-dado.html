@@ -1,0 +1,54 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Números sorteados no dado</h1>
+    <ul id="jogadas"></ul>
+    <script>
+        var li = ''
+        for (let i = 1; i <= 10; i++) {
+            let valor = Math.round((Math).random() * 5 + 1)
+            li += `<li>${i}º jogada: ${valor}</li>`
+        }
+        document.getElementById('jogadas').innerHTML = li;
+
+        // // 1) Cria a função para números aleatorios
+        // function rand() {
+        //     let rand = Math.ceil(Math.random() * 6);
+        //     return rand;
+        // }
+        // // 2) loop
+        // for (let i = 0; i < 10; i++) {
+        //     // 3) Seleciona o ul
+        //     document.querySelector('ul').innerHTML +=
+        //         `<li> Jogada n ${i}: ${rand()}</li>`;
+        //     // 4) coloca na linha de baixo pra ficar bunitu
+        // }
+        // // 5) be happy :D
+
+        // // Orientado a Objetos
+        // class Randomico {
+        //     rand() {
+        //         let rand = Math.ceil(Math.random() * 6);
+        //         return rand;
+        //     }
+        //     loop() {
+        //         for (let i = 0; i < 10; i++) {
+        //             document.querySelector('ul').innerHTML +=
+        //                 `<li>${this.rand()}</li>`;
+        //         }
+        //     }
+        // }
+        // let esse_treco = new Randomico();
+        // document.querySelector('ul').addEventListener('DOMContentLoaded', esse_treco.loop())
+    </script>
+</body>
+
+</html>

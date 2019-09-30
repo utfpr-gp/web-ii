@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let avo = {
+            nome: 'José',
+            sobrenome: 'Pato',
+            cidade: 'Curitiba',
+            imprime: function () {
+                console.log(`Nome: ${this.nome} Sobrenome: ${this.sobrenome}`);
+            }
+        }
+
+        let joana = Object.create(avo);
+        joana.nome = "Joana";
+        joana.cidade = "Pato Branco";
+        joana.curso = 'TSI';
+
+        let antonio = Object.create(avo);
+        antonio.nome = "Antonio";
+
+        antonio.__proto__.idade = 90;
+        console.log(avo);
+        console.log(joana);
+        console.log(antonio.__proto__.nome);
+    </script>
+</body>
+
+</html>

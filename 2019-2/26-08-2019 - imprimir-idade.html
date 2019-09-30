@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h1>Impressão de idade</h1>
+    <script>
+        let idade = window.prompt('Qual é a sua idade?', '20');
+
+        if (isFinite(idade)) {
+            if (confirm('Você quer mostrar a sua idade?')) {
+                //alert('Sua idade é: '+ idade);
+                alert(`Sua idade é ${idade}`);
+            } else {
+                alert('Ok! Não mostrarei a sua idade!');
+            }
+        } else {
+            alert('Por favor, digite um número.');
+        }
+    </script>
+</body>
+
+</html>
