@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Calculadora de Consumo de Combustível</h1>
+    <form id="form-combustivel" onsubmit="return calculadora()">
+        <h4>Total de KM percorrido</h4>
+        <input type="number" id="input-km">
+        <h4>Total de litros consumidos</h4>
+        <input type="number" id="input-litros">
+        <h4>Km por litro</h4>
+        <input type="text" id="inputConsumo" disabled>
+        <button id="button-combustivel" type="submit">Calcular</button>
+    </form>
+    <script>
+        var $ = function (id) {
+            return document.getElementById(id);
+        }
+
+        function calculadora() {
+            var kms = $("input-km").value;
+            var litros = $("input-litros").value;
+            var total = kms / litros;
+            $("inputConsumo").value = total;
+            return false;
+        }
+
+        window.onload = function () {
+            $("input-km").onkeypress = function (e) {
+                let code = e.charCode;
+                if (!(code >= 48 && code <= 57)) {
+                    e.preventDefault();
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
