@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <input type="checkbox" value="html">HTML
+        <input type="checkbox" value="js">JavaScript
+        <input type="checkbox" value="css">CSS
+        <button>Enviar</button>
+    </form>
+
+    <form action="">
+        <select id="linguagem-select">
+            <option disabled selected>Escolha uma linguagem</option>
+            <option value="1">Java</option>
+            <option value="2">PHP</option>
+            <option value="3">Ruby</option>
+            <option value="4">JavaScript</option>
+        </select>
+        <button>Enviar</button>
+    </form>
+
+    <script>
+        let form = window.document.forms[0];
+        let form2 = window.document.forms[1];
+
+        form.onsubmit = function (event) {
+            let elems = form.elements;
+            if (elems[1].checked) {
+                alert("Você escolheu " + elems[1].value);
+                return true;
+            } else {
+                //event.preventDefault();
+                return false;
+            }
+        }
+
+        form2.addEventListener('submit', function (evt) {
+            let select = document.querySelector('#linguagem-select');
+            alert(`${select.selectedIndex} : ${select.options[select.selectedIndex].text}`);
+            if (select.selectedIndex == 0) {
+                alert("Selecione uma linguagem");
+                evt.preventDefault();
+            }
+        });
+    </script>
+</body>
+
+</html>

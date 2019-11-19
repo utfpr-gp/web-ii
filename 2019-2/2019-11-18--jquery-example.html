@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="name-id">
+        <button>Clique Aqui</button>
+        <button>Clique Aqui Também</button>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        //$('body').html("<h1>Olá JQuery!!!</h1>");
+        $(function () {
+
+            //$('#name-id +button').text('Click here!');
+            let r = new RegExp('[Bb]anana');
+            alert(r.test('Banana'));
+            alert(r.test('nanana'));
+
+            //window.alert("Olá Mu/ndo!");
+            $('#name-id').css('color', 'red').val('UTFPR');
+            alert($('#name-id').val());
+            $('button').click(function () {
+                //$(this).hide();
+                $(this).next('button').text('Only Click');
+                $(this).parent('div').find('#name-id').val('Encontrado');
+            });
+            $('#name-id').focus(() => {
+                $('button').show();
+            })
+            $('#name-id').on('blur', () => {
+                //$('button').fadeOut(2000).delay(1000).fadeIn(3000);
+                //$('button').slideUp(2000).delay(1000).slideDown(3000);
+                $('button').slideToggle();
+            })
+
+        });
+    </script>
+</body>
+
+</html>

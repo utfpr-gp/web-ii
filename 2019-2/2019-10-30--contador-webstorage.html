@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="counter-id"></div>
+    <button type="button">Clique Aqui</button>
+    <button type="button" id="reset-button">Apagar</button>
+    <button type="button" id="show-button">Mostrar em outra página</button>
+    <script>
+        const COUNTER_KEY = 'counter';
+        document.querySelector("button").onclick = function () {
+            //objeto
+            let counter = localStorage.getItem(COUNTER_KEY);
+            if (counter == undefined) {
+                counter = {
+                    visits: 0
+                };
+            } else {
+                counter = JSON.parse(counter);
+            }
+            counter.visits++;
+            localStorage.setItem(COUNTER_KEY, JSON.stringify(counter));
+            document.querySelector('#counter-id').innerHTML =
+                counter.visits;
+        }
+
+        function clearAll() {
+            localStorage.removeItem(COUNTER_KEY);
+            //document.querySelector('#counter-id').innerHTML = 0;
+            //localStorage.clear();
+            document.querySelector("button").click();
+        }
+        document.querySelector('#reset-button').addEventListener('click', clearAll);
+
+        document.getElementById('show-button').ondblclick = function () {
+            window.location.href = 'http://127.0.0.1:5500/2019-2/2019-10-30--contador-webstorage-2.html';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        input:invalid {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <input type="text" id="ip-input" placeholder="000.000.000.000"
+            pattern="^(((\d)|(\d\d)|(1\d{2})|(2[0-4]\d)|(25[0-5]))\.){3}((25[0-5])|(2[0-4]\d)|(1\d{2})|(\d\d)||(\d))$">
+        <button>Enviar</button>
+    </form>
+    <script>
+        document.getElementById("ip-input").addEventListener("invalid", function () {
+            this.setCustomValidity("O IP está errado!");
+        });
+
+        document.forms[0].onsubmit = function (e) {
+            if (Math.random() > 0.5) {
+                alert("Enviado com sucesso!");
+            } else {
+                alert("Houve uma falha!");
+                e.preventDefault();
+            }
+        }
+    </script>
+</body>
+
+</html>
