@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="ul-candidatas">
+
+    </ul>
+    <script>
+        let maiorId, maiorAltura, maiorCoeficiente, maiorPontuacao = Number.MIN_VALUE;
+        let menorId, menorAltura, menorCoeficiente, menorPontuacao = Number.MAX_VALUE;
+
+        for (let i = 0; i < 2; i++) {
+            let id = prompt('Número da candidata');
+            let altura = +prompt('Altura da candidata');
+            let coeficiente = parseFloat(prompt('Altura da candidata'));
+            let total = altura + coeficiente;
+
+            if (total > maiorPontuacao) {
+                maiorId = id;
+                maiorAltura = altura;
+                maiorCoeficiente = coeficiente;
+                maiorPontuacao = total;
+            }
+
+            if (total < menorPontuacao) {
+                menorId = id;
+                menorAltura = altura;
+                menorCoeficiente = coeficiente;
+                menorPontuacao = total;
+            }
+        }
+
+        let vencedora =
+            `Vencedora - Id ${maiorId} Altura ${maiorAltura} Coeficiente ${maiorCoeficiente} Pontuação ${maiorPontuacao}`;
+        let perdedora =
+            `Perdedora - Id ${menorId} Altura ${menorAltura} Coeficiente ${menorCoeficiente} Pontuação ${menorPontuacao}`;
+
+        document.querySelector('#ul-candidatas').innerHTML += `<li>${vencedora}</li> <li>${perdedora}</li>`;
+    </script>
+</body>
+
+</html>

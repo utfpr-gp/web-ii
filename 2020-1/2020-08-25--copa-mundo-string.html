@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let copaMundo = 'Quinta-feira, 14 de junho de 2018';
+        let partes = copaMundo.split(' ');
+        let dia = partes[1];
+        let ano = partes[5];
+        let mes = partes[3];
+        mes = mes.substr(0, 3);
+        mes = mes.replace(mes.charAt(0), mes.charAt(0).toUpperCase());
+        let dataFormatada = `${dia}/${mes}/${ano}`;
+        alert(dataFormatada);
+    </script>
+</body>
+
+</html>

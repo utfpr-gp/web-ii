@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Triângulo</h1>
+    <script>
+        var l1, l2, l3;
+
+        do {
+            l1 = prompt('Insira um lado do triângulo');
+        } while (isNaN(l1));
+
+        do {
+            l2 = prompt('Insira um lado do triângulo');
+        } while (!isFinite(l2));
+
+        do {
+            l3 = prompt('Insira um lado do triângulo');
+        } while (isNaN(l3));
+
+        if (l1 == l2 && l2 == l3) {
+            console.log('Equilátero');
+            alert('Equilátero');
+            document.write('Equilátero');
+        } else if (l1 != l2 && l1 != l3 && l2 == l3) {
+            console.log('Escaleno');
+            alert('Escaleno');
+            document.write('Escaleno');
+        } else {
+            console.log('Isósceles');
+            alert('Isósceles');
+            document.write('Isósceles');
+        }
+    </script>
+</body>
+
+</html>

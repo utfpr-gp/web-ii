@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <section id="section-hour">
+
+    </section>
+    <button id="button-increment">Incrementar 1 segundo</button>
+    <script>
+        function formataDoisDigitos(numero) {
+            if (numero < 10) {
+                return '0' + numero;
+            }
+            return numero;
+        }
+
+        let hora = new Date();
+        hora = hora.toLocaleTimeString();
+        document.querySelector('#section-hour').textContent = hora;
+
+        document.getElementById('button-increment').onclick = () => {
+            let hora = document.querySelector('#section-hour').textContent;
+            let partes = hora.split(':');
+
+            if (+partes[2] < 59) {
+                let n = +partes[2] + 1;
+                partes[2] = formataDoisDigitos(n);
+            } else {
+                partes[2] = '00';
+                if (+partes[1] < 59) {
+                    let n = +partes[1] + 1;
+                    partes[1] = formataDoisDigitos(n);
+                } else {
+                    partes[1] = '00';
+                    let n = +partes[0] + 1;
+                    partes[0] = formataDoisDigitos(n);
+                }
+            }
+
+            partes = partes.join(':');
+            document.querySelector('#section-hour').textContent = partes;
+
+        }
+    </script>
+</body>
+
+</html>

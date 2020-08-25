@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Semana Acadêmica</h1>
+    <p id="p-semana">Participe da 8 semana acadêmica de TSI</p>
+    <script>
+        document.getElementById('p-semana').onmouseover = function () {
+            function fnSemana() {
+                window.open('http://semana.tsi.gp.utfpr.edu.br');
+            }
+            window.setTimeout(fnSemana, 5000);
+        }
+    </script>
+</body>
+
+</html>

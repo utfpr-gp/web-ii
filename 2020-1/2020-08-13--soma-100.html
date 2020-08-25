@@ -4,15 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Primeiro Script em WEB II</title>
+    <title>Document</title>
 </head>
 
 <body>
-    <h1>Primeiro Exemplo</h1>
+    <h1>Soma dos número de 1 a 100:</h1>
     <script>
-        document.write('Olá Mundo!!!');
+        var soma = 0;
+        for (var i = 0; i <= 100; i++) {
+            soma += i;
+        }
+        alert("Soma " + soma);
     </script>
-
 </body>
 
 </html>
