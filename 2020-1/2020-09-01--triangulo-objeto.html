@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Crie um objeto chamado forma no modo literal que tenha o atributo tipo e um método getTipo().
+    Crie um objeto triangulo a partir do protótipo de forma.
+    Este objeto deve ter os atributos a, b e c, correspondentes aos tamanhos dos lados do triângulo.
+    Adicione um novo método getPerimetro() ao triângulo para retornar a soma dos lados.
+    A partir do objeto triangulo, adicione no protótipo forma o atributo numeroLados.
+
+    <script>
+        let forma = {
+            tipo: null,
+            getTipo: function () {
+                return this.tipo;
+            }
+        }
+        let triangulo = Object.create(forma);
+        triangulo.tipo = 'Triangulo';
+        triangulo.a = 3;
+        triangulo.b = 4;
+        triangulo.c = 5;
+        triangulo.getPerimetro = function () {
+            return this.a + this.b + this.c;
+        }
+        triangulo.__proto__.numeroLados = null;
+        triangulo.numeroLados = 3;
+        console.log(triangulo.getTipo());
+        console.log(triangulo);
+    </script>
+</body>
+
+</html>

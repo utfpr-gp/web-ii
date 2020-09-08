@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Seleção Brasileira</h1>
+    <ul></ul>
+    <p>
+        <button id="button-crescente">Crescente</button>
+        <button id="button-decrescente">Decrescente</button>
+    </p>
+
+    <script>
+        document.querySelector('#button-crescente').onclick = function () {
+            let selecao = convocacao().sort();
+            imprimeSelecao(selecao);
+        }
+
+        document.querySelector('#button-decrescente').onclick = function () {
+            let selecao = convocacao().sort().reverse();
+            imprimeSelecao(selecao);
+        }
+
+        function convocacao() {
+            let corinthians = ['c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8', 'c9', 'c10', 'c11'];
+            let atletico = [];
+
+            for (let i = 0; i < 11; i++) {
+                atletico[i] = `ap ${i + 1}`;
+            }
+
+            return corinthians.concat(atletico);
+        }
+
+        function imprimeSelecao(selecao) {
+            document.querySelector('ul').innerHTML = '<li>' + selecao.join('<li>');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Seleção Brasileira</h1>
+    <ul></ul>
+    <p>
+        <button id="button-crescente">Crescente</button>
+        <button id="button-decrescente">Decrescente</button>
+        <button id="button-substituicao">Substituição</button>
+    </p>
+
+    <script>
+        let selecao = convocacao();
+
+        document.querySelector('#button-crescente').onclick = function () {
+            imprimeSelecao(selecao.sort());
+        }
+
+        document.querySelector('#button-decrescente').onclick = function () {
+            imprimeSelecao(selecao.sort().reverse());
+        }
+
+        document.getElementById('button-substituicao').addEventListener('click', function () {
+            let jogador1 = prompt('Qual jogador deseja desconvocar?');
+            let jogador2 = prompt('Qual jogador deseja convocar?');
+
+            let posicao = selecao.indexOf(jogador1);
+
+            if (posicao == -1) {
+                alert('Jogador inexistente!');
+            } else {
+                selecao[posicao] = jogador2;
+            }
+
+            imprimeSelecao(selecao);
+        });
+
+        function convocacao() {
+            let corinthians = ['c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8', 'c9', 'c10', 'c11'];
+            let atletico = [];
+
+            for (let i = 0; i < 11; i++) {
+                atletico[i] = `ap ${i + 1}`;
+            }
+
+            return corinthians.concat(atletico);
+        }
+
+        function imprimeSelecao(selecao) {
+            document.querySelector('ul').innerHTML = '<li>' + selecao.join('<li>');
+        }
+    </script>
+</body>
+
+</html>

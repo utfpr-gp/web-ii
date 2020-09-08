@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Seleção Brasileira</h1>
+    <ul></ul>
+    <script>
+        let corinthians = ['c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8', 'c9', 'c10', 'c11'];
+        let atletico = [];
+
+        for (let i = 0; i < 11; i++) {
+            atletico[i] = `ap ${i + 1}`;
+        }
+
+        let selecao = corinthians.concat(atletico);
+        document.querySelector('ul').innerHTML = '<li>' + selecao.join('<li>');
+    </script>
+</body>
+
+</html>

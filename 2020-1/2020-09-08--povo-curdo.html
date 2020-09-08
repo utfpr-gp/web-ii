@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=form, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <input type="text" id="entrada">
+        <button>Enviar</button>
+    </form>
+    <script>
+        const q = 113;
+        const Q = 81;
+        const w = 119;
+        const W = 87;
+        const x = 120;
+        const X = 88;
+        document.getElementById('entrada').onkeypress = function (e) {
+            let code = e.charCode;
+            if ([q, Q, w, W, x, X].indexOf(code) != -1) {
+                e.preventDefault();
+            }
+        }
+    </script>
+</body>
+
+</html>
