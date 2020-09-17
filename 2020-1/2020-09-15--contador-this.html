@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Counter {
+            constructor(v) {
+                this.value = v;
+            }
+            decrement() {
+                let that = this;
+                let key = window.setInterval(function () {
+                    that.value--;
+                    that.show();
+
+                    if (that.value == 0) {
+                        clearInterval(key);
+                    }
+                }, 1000);
+            }
+
+            show() {
+                console.log(this.value);
+            }
+        }
+        let counter = new Counter(10);
+        counter.decrement();
+    </script>
+</body>
+
+</html>

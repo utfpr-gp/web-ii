@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="button-clique">Clique aqui</button>
+    <script>
+        let b = document.querySelector('#button-clique');
+        b.onclick = function () {
+            this.textContent = 'Clicado';
+        }
+        b.addEventListener('dblclick', function () {
+            this.textContent = 'Clicado 2x';
+        });
+
+        let mouseOverHandler = function () {
+            this.textContent = 'Sai de cima';
+        }
+        b.onmouseover = mouseOverHandler;
+
+        function blurHandler() {
+            this.textContent = 'Clique Aqui!';
+        }
+        b.addEventListener('blur', blurHandler);
+    </script>
+</body>
+
+</html>
