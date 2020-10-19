@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>O que você deseja aprender?</h1>
+    <form action="">
+        <input type="checkbox" name="ling" value="html">HTML <br>
+        <input type="checkbox" name="ling" value="js">JavaScript <br>
+        <input type="checkbox" name="ling" value="css">CSS <br>
+        <button>Enviar</button>
+    </form>
+
+    <script>
+        const JS = 'js';
+
+        function onSubmitHandler() {
+            let elems = document.querySelectorAll('input[name="ling"]');
+            let counter = 0;
+            for (e of elems) {
+                console.log(e);
+                if (e.value == JS && e.checked) {
+                    alert('Eu <3 JavaScript!');
+                }
+
+                if (e.checked) {
+                    counter++;
+                }
+            }
+            alert(`Eu <3 ${counter} ${counter <= 1 ? 'linguagem' : 'linguagens'}!`);
+        }
+
+        document.forms[0].onsubmit = onSubmitHandler;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" id="busca">
+        <input type="text" id="buscaInput">
+        <button onclick="alert(document.forms[0].buscaInput.value)">Enviar</button>
+    </form>
+
+    <script>
+        window.document.forms.busca.buscaInput.value = 'UTFPR';
+        let form0 = document.forms[0];
+        let bInput = form0.buscaInput;
+        bInput.addEventListener('focus', function () {
+            //alert('O campo está com foco!');
+            console.log('O campo está com foco!');
+        });
+
+        function onBlurHandler() {
+            //window.alert('O campo perdeu o foco!');
+            console.log('O campo perdeu o foco!');
+        }
+
+        buscaInput.onblur = onBlurHandler;
+
+        form0.onsubmit = function () {
+            if (bInput.value == '') {
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+
+</html>

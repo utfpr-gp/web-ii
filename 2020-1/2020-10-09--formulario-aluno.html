@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error {
+            background-color: indianred;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <label for="input-name">Nome:</label>
+        <input id="input-name" type="text">
+        <br>
+        <label for="input-registration">Matrícula:</label>
+        <input id="input-registration" type="text">
+        <br>
+
+        <fieldset>
+            <legend>Disciplina:</legend>
+            <input type="checkbox" name="discipline" value="web1">WEB I <br>
+            <input type="checkbox" name="discipline" value="web2">WEB II <br>
+            <input type="checkbox" name="discipline" value="web3">WEB III <br>
+            <input type="checkbox" name="discipline" value="web4">WEB IV <br>
+        </fieldset>
+        <br>
+
+        <label for="select-course">Curso:</label>
+        <select id="select-course">
+            <option disabled selected value>Escolha um curso</option>
+            <option value="tsi">Tecnologia em Sistemas para Internet</option>
+            <option value="em">Engenharia Mecânica</option>
+            <option value="ec">Engenharia Civil</option>
+        </select>
+
+        <fieldset>
+            <legend>Período:</legend>
+            <input type="radio" name="period" value="1">1 <br>
+            <input type="radio" name="period" value="2">2 <br>
+            <input type="radio" name="period" value="3">3 <br>
+            <input type="radio" name="period" value="4">4 <br>
+        </fieldset>
+
+        <button>Enviar</button>
+    </form>
+    <script>
+        //nome
+        document.getElementById('input-name').onblur = function () {
+            if (this.value.trim() == "") {
+                this.classList.add('error');
+            } else {
+                this.classList.remove('error');
+            }
+        }
+
+        //matrícula
+        document.querySelector('#input-registration').addEventListener('blur', function () {
+            if (this.value.trim() == "" || isNaN(this.value)) {
+                this.classList.add('error');
+            } else {
+                this.classList.remove('error');
+            }
+        });
+
+        document.forms[0].onsubmit = function () {
+            //nome
+            if (document.getElementById('input-name').value == "") {
+                alert('O nome não pode ser vazio.');
+                return false;
+            }
+
+            //matricula
+            let regInput = document.querySelector('#input-registration');
+            if (regInput.value.trim() == "" || isNaN(regInput.value)) {
+                alert('A matrícula precisa ser um número.');
+                return false;
+            }
+
+            //disciplina
+            let elems = document.getElementsByName('discipline');
+            let isChecked = false;
+            elems.forEach((e) => {
+                if (e.checked) {
+                    isChecked = true;
+                }
+            });
+            if (!isChecked) {
+                alert('Por favor, escolha pelo menos uma disciplina');
+                return false;
+            }
+
+            //curso
+            if (document.getElementById('select-course').selectedIndex == 0) {
+                alert('Escolha um curso.');
+                return false;
+            }
+
+            //período
+            elems = document.querySelectorAll('[name=period]');
+            isChecked = false;
+            for (e of elems) {
+                if (e.checked) {
+                    isChecked = true;
+                }
+            }
+            if (!isChecked) {
+                alert('Por favor, escolha um período.');
+                return false;
+            }
+
+            alert('Enviado com sucesso!');
+        }
+    </script>
+</body>
+
+</html>
