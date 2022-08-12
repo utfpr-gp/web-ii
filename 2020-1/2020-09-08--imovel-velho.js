@@ -1,25 +1,23 @@
 class ImovelVelho extends Imovel {
+  constructor(endereco, preco, cidade) {
+    super(endereco, preco);
+    this.cidade = cidade;
+  }
 
-    constructor(endereco, preco, cidade) {
-        super(endereco, preco);
-        this.cidade = cidade;
-    }
+  get cidade() {
+    return this._cidade;
+  }
 
-    get cidade() {
-        return this._cidade;
-    }
-
-    set cidade(cidade) {
-        this._cidade = cidade;
-    }
-    imprime() {
-        console.log(`Endereco ${this.endereco}
+  set cidade(cidade) {
+    this._cidade = cidade;
+  }
+  imprime() {
+    console.log(`Endereco ${this.endereco}
                     Preço ${this.preco * 0.8}`);
-    }
+  }
 
-    toString() {
-        return `Endereco ${this.endereco}
+  toString() {
+    return `Endereco ${this.endereco}
         Preço ${this.preco * 0.8}`;
-    }
-
+  }
 }

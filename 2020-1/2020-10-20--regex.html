@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <input type="text" pattern="[a-z|A-Z\s]+$" required>
+        <button>Enviar</button>
+    </form>
+    <script>
+        let pattern = new RegExp('[0-9]');
+        console.log(pattern.test('8'));
+        console.log(/[0-9]/.test('8'));
+        console.log(/\d/.test('9'));
+    </script>
+</body>
+
+</html>

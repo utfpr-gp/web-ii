@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Cookies
+        document.cookie = "cor=blue";
+        document.cookie = "nome=Roni";
+
+        console.log(document.cookie);
+        let cookies = document.cookie.split(';');
+
+        for (let c of cookies) {
+            console.log('Cookie: ' + c);
+        }
+
+        //JSON
+
+        let roni = {
+            name: 'Roni Fabio Banaszewski',
+            university: 'UTFPR',
+            printName: function () {
+                console.log(this.name);
+            }
+        }
+
+        let roniJSON = JSON.stringify(roni);
+        console.log(roni);
+        console.log(roniJSON);
+
+        let roniWithProto = Object.setPrototypeOf(JSON.parse(roniJSON), roni);
+        console.log(roniWithProto);
+        roniWithProto.printName();
+
+
+        //Web Storage
+
+        localStorage.setItem('roni', JSON.stringify(roni));
+        roni = JSON.parse(localStorage.getItem('roni'));
+        console.log(roni);
+    </script>
+</body>
+
+</html>

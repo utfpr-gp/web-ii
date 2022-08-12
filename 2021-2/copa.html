@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>JavaScript</title>
+
+    <script>
+      +(function () {
+        let x = 0;
+      })();
+
+      function onClick() {}
+    </script>
+
+    <script>
+      +(function () {
+        let x = 0;
+      })();
+
+      onClick();
+    </script>
+  </head>
+
+  <body>
+    <div>
+      <button id="myButton" class="button" type="button">Enviar</button>
+    </div>
+  </body>
+
+  <script>
+    myButton.onClick = function () {};
+  </script>
+</html>

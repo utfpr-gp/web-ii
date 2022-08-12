@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let maisAlto = 0;
+      let codMaisAlto;
+      let continuar = false;
+      do {
+        let altura = +prompt("Sua altura:");
+        let peso = +prompt("Seu peso:");
+        let codigo = +prompt("Seu código:");
+        if (altura > maisAlto) {
+          maisAlto = altura;
+          codMaisAlto = codigo;
+        }
+        continuar = confirm("Quer cadastrar um novo aluno?");
+      } while (continuar);
+      console.log(
+        `O aluno com código ${codMaisAlto} é o mais alto com altura ${maisAlto}`
+      );
+    </script>
+  </body>
+</html>

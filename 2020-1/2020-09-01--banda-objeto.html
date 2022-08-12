@@ -1,43 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
-    Banda
-    Os atributos são nome, membros(vetor), quantidadeShowMes
-    Cantor
-    Os atributos são nome do vocalista, banda (referência), cacheShow
-    As funções são mostraDados e mostraFaturamento.
+  <body>
+    Banda Os atributos são nome, membros(vetor), quantidadeShowMes Cantor Os
+    atributos são nome do vocalista, banda (referência), cacheShow As funções
+    são mostraDados e mostraFaturamento.
     <script>
-        let Banda = function (nome, membros, quantidadeShowMes) {
-            this.nome = nome;
-            this.membros = membros;
-            this.showMes = quantidadeShowMes;
-        }
+      let Banda = function (nome, membros, quantidadeShowMes) {
+        this.nome = nome;
+        this.membros = membros;
+        this.showMes = quantidadeShowMes;
+      };
 
-        let Cantor = function (nome, banda, cacheShow) {
-            this.nome = nome;
-            this.banda = banda;
-            this.cacheShow = cacheShow;
-            this.mostraDados = function () {
-                console.log(`Nome ${this.nome} Banda ${this.banda.nome}`);
-            }
-            this.mostraFaturamento = function () {
-                console.log(`Faturamento Mês ${this.cacheShow * this.banda.showMes}`);
-            }
-        }
+      let Cantor = function (nome, banda, cacheShow) {
+        this.nome = nome;
+        this.banda = banda;
+        this.cacheShow = cacheShow;
+        this.mostraDados = function () {
+          console.log(`Nome ${this.nome} Banda ${this.banda.nome}`);
+        };
+        this.mostraFaturamento = function () {
+          console.log(`Faturamento Mês ${this.cacheShow * this.banda.showMes}`);
+        };
+      };
 
-        let neyvanna = new Banda('Neyvanna', ['João', 'José'], 2);
-        let julio = new Cantor('Julio', neyvanna, 200);
-        julio.mostraDados();
-        julio.mostraFaturamento();
-        console.log(julio);
+      let neyvanna = new Banda('Neyvanna', ['João', 'José'], 2);
+      let julio = new Cantor('Julio', neyvanna, 200);
+      julio.mostraDados();
+      julio.mostraFaturamento();
+      console.log(julio);
     </script>
-</body>
-
+  </body>
 </html>
