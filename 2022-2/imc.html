@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Calculora de IMC</h1>
+
+    //form>input*2+button#btn-calcular
+    <form action="">
+      <input type="text" id="input-peso" />
+      <input type="text" id="input-altura" />
+      <button id="btn-calcular" onclick="handleClick()">Calcular</button>
+    </form>
+    <script>
+      let oi;
+      alert(typeof oi); //undefined
+
+      let date = null; //object
+
+      function handleClick() {
+        let peso = document.getElementById('input-peso').value;
+        let altura = document.querySelector('#input-altura').value;
+
+        if (isFinite(peso)) {
+          peso = +peso;
+          //peso = parseInt(peso);
+        }
+
+        if (!isNaN(altura)) {
+          altura = window.parseFloat(altura);
+        }
+
+        let imc = peso / (altura * altura);
+        alert(`O seu IMC é ${imc.toFixed(2)}`);
+      }
+    </script>
+  </body>
+</html>

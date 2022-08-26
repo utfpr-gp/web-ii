@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Contagem Regressiva</h1>
+    <div id="contagem">20</div>
+    <script>
+      //const randomico = (10 + Math.random() * 20).toFixed(0);
+      const randomico = 10 + Math.ceil(Math.random() * 20);
+      document.querySelector('#contagem').textContent = randomico;
+
+      //let contagem = document.querySelector('#contagem').textContent;
+      let c = +contagem.textContent;
+      //let c = parseInt(contagem.textContent);
+      //alert(typeof c);
+      const contadorFuncao = function () {
+        c--;
+        document.getElementById('contagem').textContent = c;
+        if (c == 0) {
+          window.clearInterval(chave);
+        }
+      };
+      //let chave = window.setInterval(contadorFuncao, 1000);
+      let chave;
+      window.setTimeout(function () {
+        chave = window.setInterval(contadorFuncao, 1000);
+      }, 7000);
+    </script>
+  </body>
+</html>
