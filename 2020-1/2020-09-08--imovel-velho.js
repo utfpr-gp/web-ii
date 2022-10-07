@@ -1,7 +1,7 @@
 class ImovelVelho extends Imovel {
   constructor(endereco, preco, cidade) {
     super(endereco, preco);
-    this.cidade = cidade;
+    this._cidade = cidade;
   }
 
   get cidade() {
@@ -11,6 +11,7 @@ class ImovelVelho extends Imovel {
   set cidade(cidade) {
     this._cidade = cidade;
   }
+
   imprime() {
     console.log(`Endereco ${this.endereco}
                     Preço ${this.preco * 0.8}`);

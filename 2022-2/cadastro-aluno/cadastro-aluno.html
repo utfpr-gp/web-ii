@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Cadastro de Aluno</h1>
+    <form action="">
+      <p>
+        Nome:
+        <input type="text" />
+      </p>
+      <p>
+        Matrícula
+        <input type="text" />
+      </p>
+      <p>
+        Curso
+        <select name="" id="curso-select">
+          <option value="-1" selected>Escolha uma opção</option>
+          <option value="1">TSI</option>
+          <option value="2">Engenharia Civil</option>
+        </select>
+      </p>
+      <p>
+        Período
+        <input name="period" type="radio" value="1" />1º <br />
+        <input name="period" type="radio" value="2" />2º <br />
+        <input name="period" type="radio" value="3" />3º<br />
+        <input name="period" type="radio" value="4" />4º<br />
+      </p>
+
+      <p>
+        Disciplinas
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+      </p>
+
+      <button>Enviar</button>
+    </form>
+    <script src="cadastro-aluno.js"></script>
+  </body>
+</html>

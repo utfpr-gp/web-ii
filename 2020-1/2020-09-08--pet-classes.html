@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
-        class Pet {
-            constructor(name, age) {
-                this.name = name;
-                this.age = age;
-            }
-
-            get age() {
-                console.log('get');
-                return this._age + 1;
-            }
-
-            set age(age) {
-                console.log('set');
-                this._age = age + 1;
-            }
+      class Pet {
+        constructor(name, age) {
+          this.name = name;
+          this._age = age;
         }
 
-        let jonjo = new Pet('Jonjo', 3);
-        console.log('Idade: ' + jonjo.age);
-    </script>
-</body>
+        get age() {
+          console.log('get');
+          return this._age + 1;
+        }
 
+        set age(age) {
+          console.log('set');
+          this._age = age + 1;
+        }
+      }
+
+      let jonjo = new Pet('Jonjo', 3);
+      console.log('Idade: ' + jonjo.age);
+    </script>
+  </body>
 </html>

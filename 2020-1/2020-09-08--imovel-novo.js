@@ -2,7 +2,7 @@ class ImovelNovo extends Imovel {
 
     constructor(endereco, preco, cidade) {
         super(endereco, preco);
-        this.cidade = cidade;
+        this._cidade = cidade;
     }
 
     get cidade() {

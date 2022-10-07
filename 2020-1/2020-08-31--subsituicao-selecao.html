@@ -1,62 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <h1>Seleção Brasileira</h1>
     <ul></ul>
     <p>
-        <button id="button-crescente">Crescente</button>
-        <button id="button-decrescente">Decrescente</button>
-        <button id="button-substituicao">Substituição</button>
+      <button id="button-crescente">Crescente</button>
+      <button id="button-decrescente">Decrescente</button>
+      <button id="button-substituicao">Substituição</button>
     </p>
 
     <script>
-        let selecao = convocacao();
+      let selecao = convocacao;
+      selecao = selecao();
 
-        document.querySelector('#button-crescente').onclick = function () {
-            imprimeSelecao(selecao.sort());
-        }
+      document.querySelector('#button-crescente').onclick = function () {
+        imprimeSelecao(selecao.sort());
+      };
 
-        document.querySelector('#button-decrescente').onclick = function () {
-            imprimeSelecao(selecao.sort().reverse());
-        }
+      document.querySelector('#button-decrescente').onclick = function () {
+        imprimeSelecao(selecao.sort().reverse());
+      };
 
-        document.getElementById('button-substituicao').addEventListener('click', function () {
-            let jogador1 = prompt('Qual jogador deseja desconvocar?');
-            let jogador2 = prompt('Qual jogador deseja convocar?');
+      document
+        .getElementById('button-substituicao')
+        .addEventListener('click', () => {
+          let jogador1 = prompt('Qual jogador deseja desconvocar?');
+          let jogador2 = prompt('Qual jogador deseja convocar?');
 
-            let posicao = selecao.indexOf(jogador1);
+          let posicao = selecao.indexOf(jogador1);
 
-            if (posicao == -1) {
-                alert('Jogador inexistente!');
-            } else {
-                selecao[posicao] = jogador2;
-            }
+          if (posicao == -1) {
+            alert('Jogador inexistente!');
+          } else {
+            selecao[posicao] = jogador2;
+          }
 
-            imprimeSelecao(selecao);
+          imprimeSelecao(selecao);
         });
 
-        function convocacao() {
-            let corinthians = ['c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8', 'c9', 'c10', 'c11'];
-            let atletico = [];
+      document
+        .getElementById('button-substituicao')
+        .addEventListener('click', () => {
+          console.log('oi');
+        });
 
-            for (let i = 0; i < 11; i++) {
-                atletico[i] = `ap ${i + 1}`;
-            }
+      function convocacao() {
+        let corinthians = [
+          'c1',
+          'c2',
+          'c3',
+          'c4',
+          'c5',
+          'c6',
+          'c7',
+          'c8',
+          'c9',
+          'c10',
+          'c11',
+        ];
+        let atletico = [];
 
-            return corinthians.concat(atletico);
+        for (let i = 0; i < 11; i++) {
+          atletico[i] = `ap ${i + 1}`;
         }
 
-        function imprimeSelecao(selecao) {
-            document.querySelector('ul').innerHTML = '<li>' + selecao.join('<li>');
-        }
+        return corinthians.concat(atletico);
+      }
+
+      function imprimeSelecao(selecao) {
+        document.querySelector('ul').innerHTML = '<li>' + selecao.join('<li>');
+      }
     </script>
-</body>
-
+  </body>
 </html>
